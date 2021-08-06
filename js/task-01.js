@@ -1,14 +1,10 @@
-const listCategories = document.getElementById('categories');
-console.log(listCategories);
-function getChidrenByList (){
-    const amountOfItem = listCategories.children.length;
-return `B списке ${amountOfItem} категории.`
-};
-console.log(getChidrenByList ());
-const items = listCategories.querySelectorAll('.item');
-console.log(items);
-items.forEach(elem=>{
-    console.log('Категория:', elem.getElementsByTagName('h2')[0].textContent);
-    console.log('Количество элементов:', elem.getElementsByTagName('li').length);
-});
+const allItemsOfList = document.querySelectorAll('.item');
+console.log(`В списке ${allItemsOfList.length} категории`)
 
+allItemsOfList.forEach(el=> {
+const newTitle = el.querySelector('h2'); 
+console.log(`Категория: ${newTitle.textContent}`);
+
+const newItem = el.querySelectorAll('li')
+console.log(`Количество элементов: ${newItem.length}`)
+});
